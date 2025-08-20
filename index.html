@@ -7,106 +7,165 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: "class",
         theme: {
           extend: {
             colors: {
               primary: "#ff6363",
               secondary: "#3faffa",
+              darkHover: "#2a004a",
+              darkTheme: "#11001f",
+              darkText: "#e0e0e0",
+              darkCard: "#1c012f",
             },
           },
         },
       };
     </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ovo&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      html,
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      a,
+      li,
+      ul,
+      nav,
+      div,
+      span,
+      input,
+      textarea,
+      button {
+        font-family: "Ovo", serif !important;
+      }
+    </style>
   </head>
-  <body class="overflow-x-hidden">
-    <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
+  <body
+    class="overflow-x-hidden bg-white text-black dark:bg-darkTheme dark:text-darkText"
+  >
+    <!-- Background images -->
+    <div
+      class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden"
+    >
       <img src="./images/header-bg-color.png" alt="" class="w-full" />
     </div>
+    <div
+      class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] hidden dark:block"
+    >
+      <img src="./images/header-bg-dark.png" alt="" class="w-full" />
+    </div>
+
+    <!-- Navbar -->
     <nav
       class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50"
     >
-      <img
-        src="./images/logo.png"
-        alt="Logo"
-        class="w-28 cursor-pointer mr-14"
-      />
+      <img src="./images/logo.png" alt="Logo" class="w-28 cursor-pointer mr-14 dark:hidden" />
+      <img src="./images/logo_dark.png" alt="Logo" class="w-28 cursor-pointer mr-14 hidden dark:block" />
+
       <ul
-        class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50"
+        class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-6 py-2 bg-white shadow-sm bg-opacity-50 dark:bg-darkCard dark:text-darkText dark:border dark:border-white/50 dark:bg-transparent"
       >
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About me</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#contact">Contact me</a></li>
+        <li><a href="#home" class="hover:text-primary">Home</a></li>
+        <li><a href="#about" class="hover:text-primary">About me</a></li>
+        <li><a href="#services" class="hover:text-primary">Services</a></li>
+        <li><a href="#work" class="hover:text-primary">Work</a></li>
+        <li><a href="#contact" class="hover:text-primary">Contact</a></li>
       </ul>
+
+      <!-- Buttons -->
       <div class="flex items-center gap-4">
-        <button><img src="./images/moon_icon.png" alt="" class="w-6" /></button>
+        <!-- Dark Mode Toggle -->
+        <button id="theme-toggle" class="p-2 rounded-full">
+          <img
+            id="theme-icon"
+            src="./images/moon_icon.png"
+            alt="Dark Mode"
+            class="w-6"
+          />
+        </button>
+
         <a
           href="#contact"
-          class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4"
-        >
-          Contact <img src="./images/arrow-icon.png" alt="" class="w-3" />
+          class="hidden lg:flex items-center gap-3 px-6 py-2 border border-gray-500 rounded-full ml-4 hover:text-primary dark:border-white/50"
+        >Contact 
+          <img src="./images/arrow-icon.png" alt="" class="w-3 dark:hidden" />
+          <img src="./images/arrow-icon-dark.png" alt="" class="w-3 hidden dark:block" />
         </a>
-        <button class="black md:hidden ml-3" onclick="openMenu()">
-          <img src="./images/menu-black.png" alt="" class="w-6" />
+
+        <!-- Mobile menu button -->
+        <button class="md:hidden ml-3" onclick="openMenu()">
+          <img src="./images/menu-black.png" alt="" class="w-6 dark:hidden" />
+          <img src="./images/menu-white.png" alt="" class="w-6 hidden dark:block" />
         </button>
       </div>
 
-      <!-- -------Mobile Menu------- -->
+      <!-- Mobile Menu -->
       <ul
         id="sideMenu"
-        class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500"
-      >
+        class="flex md:hidden flex-col gap-6 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-white dark:bg-darkCard transition duration-500 
+        dark:bg-[#2a004a] dark:text-white">
         <div class="absolute right-6 top-6" onclick="closeMenu()">
-          <img
-            src="./images/close-black.png"
-            alt=""
-            class="w-5 cursor-pointer"
-          />
+          <img src="./images/close-black.png" alt="" class="w-5 cursor-pointer dark:hidden" />
+          <img src="./images/close-white.png" alt="" class="w-5 cursor-pointer hidden dark:block" />
+
+
         </div>
-        <li><a href="#top" onclick="closeMenu()">Home</a></li>
-        <li><a href="#about" onclick="closeMenu()">About me</a></li>
+        <li><a href="#home" onclick="closeMenu()">Home</a></li>
+        <li><a href="#about" onclick="closeMenu()">About</a></li>
         <li><a href="#services" onclick="closeMenu()">Services</a></li>
         <li><a href="#work" onclick="closeMenu()">Work</a></li>
-        <li><a href="#contact" onclick="closeMenu()">Contact me</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
       </ul>
     </nav>
 
-    <!--- -------header------- --->
-
-    <div
+    <!-- Header Section -->
+    <section
       id="home"
-      class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4"
+      class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-6"
     >
       <img src="./images/profile-img.png" alt="" class="rounded-full w-32" />
       <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3">
         Hi ! I'm Himanshu Gangwar
         <img src="./images/hand-icon.png" alt="" class="w-6" />
       </h3>
-      <h1 class="text-3xl sm:text-6xl lg:text-[66px]">Full Stack Developer</h1>
+      <h1 class="text-3xl sm:text-6xl lg:text-[66px] font-bold">
+        Full Stack Developer
+      </h1>
       <p class="max-w-2xl mx-auto">
-        I am a full stack developer skilled in building dynamic web
-        applications, combining frontend design with backend logic using HTML,
-        CSS, JavaScript, and databases to deliver complete digital solutions.
+        I am a full stack developer skilled in building dynamic web applications,
+        combining frontend design with backend logic using HTML, CSS, JavaScript,
+        and databases to deliver complete digital solutions.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <a
           href="#contact"
-          class="px-10 py-3 border rounded-full bg-gradient-to-r from-[#b820e6] to-[#da7d20] text-wrap flex items-center gap-2"
-          >contact me
-          <img src="./images/right-arrow-white.png" alt="" class="w-4"
-        /></a>
-
-        <!--resume file location paste here #contact remove -->
+          class="px-10 py-3 border rounded-full bg-gradient-to-r from-[#b820e6] to-[#da7d20] flex items-center gap-2 text-white"
+        >
+          Contact me
+          <img src="./images/right-arrow-white.png" alt="" class="w-4" />
+        </a>
 
         <a
-          href="#contact"
-          class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white"
-          >My Resume <img src="./images/download-icon.png" alt="" class="w-4"
-        /></a>
+          href="./resume.pdf" download
+          class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark:bg-darkCard dark:border-darkText"
+        >
+          My Resume <img src="./images/download-icon.png" alt="" class="w-4" />
+        </a>
       </div>
-    </div>
+    </section>
 
     <!-- -------About------- -->
 
@@ -123,7 +182,7 @@
           <div
             class="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex-item-center justify-center"
           >
-            <img src="./images/circular-text.png" alt="" class="w-full" />
+            <img src="./images/circular-text.png" alt="" class="w-full animate-spin_slow" />
             <img
               src="./images/dev-icon.png"
               alt=""
@@ -140,31 +199,41 @@
             alike.
           </p>
           <ul class="grid grid-cols-auto sm:grid-cols-3 gap-6 max-w-2xl">
+           <li
+  class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer
+    hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]
+    dark:border-white/50 dark:bg-darkCard dark:text-darkText dark:hover:bg-darkHover/50 dark:hover:shadow-[4px_4px_0_#fff]"
+>
+  <img src="./images/code-icon.png" alt="" class="w-7 mt-3 dark:hidden" />
+  <img src="./images/code-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block" />
+  <h3 class="my-4 font-semibold text-gray-700 dark:text-darkText">Languages</h3>
+  <p class="text-gray-600 text-sm dark:text-gray-300">
+    HTML, CSS, JavaScript, React Js, Node Js
+  </p>
+</li>
+
             <li
-              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]"
+              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer
+    hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]
+    dark:border-white/50 dark:bg-darkCard dark:text-darkText dark:hover:bg-darkHover/50 dark:hover:shadow-[4px_4px_0_#fff]"
             >
-              <img src="./images/code-icon.png" alt="" class="w-7 mt-3" />
-              <h3 class="my-4 font-semibold text-gray-700">Languages</h3>
-              <p class="text-gray-600 text-sm">
-                HTML,CSS,JavaScript, React Js,Node Js
-              </p>
+              <img src="./images/edu-icon.png" alt="" class="w-7 mt-3 dark:hidden" />
+              <img src="./images/edu-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block" />
+              <h3 class="my-4 font-semibold text-gray-700 dark:text-darkText">Education</h3>
+              <p class="text-gray-600 text-sm dark:text-gray-300">B.Tech in Computer Science</p>
             </li>
             <li
-              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]"
+              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer
+    hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]
+    dark:border-white/50 dark:bg-darkCard dark:text-darkText dark:hover:bg-darkHover/50 dark:hover:shadow-[4px_4px_0_#fff]"
             >
-              <img src="./images/edu-icon.png" alt="" class="w-7 mt-3" />
-              <h3 class="my-4 font-semibold text-gray-700">Education</h3>
-              <p class="text-gray-600 text-sm">B.Tech in Computer Science</p>
-            </li>
-            <li
-              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]"
-            >
-              <img src="./images/project-icon.png" alt="" class="w-7 mt-3" />
-              <h3 class="my-4 font-semibold text-gray-700">Projects</h3>
-              <p class="text-gray-600 text-sm">Built more than 3 Projects</p>
+              <img src="./images/project-icon.png" alt="" class="w-7 mt-3 dark:hidden" />
+              <img src="./images/project-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block" />
+              <h3 class="my-4 font-semibold text-gray-700 dark:text-darkText">Projects</h3>
+              <p class="text-gray-600 text-sm dark:text-gray-300">Built more than 3 Projects</p>
             </li>
           </ul>
-          <h4 class="my-6 text-gray-700">Tools i use</h4>
+          <h4 class="my-6 text-gray-700 dark:text-darkText">Tools i use</h4>
           <ul class="flex items-center gap-3 sm:gap-5">
             <li
               class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]"
