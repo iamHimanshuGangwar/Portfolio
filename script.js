@@ -29,6 +29,7 @@ window.addEventListener('scroll', () => {
 
 
 // Load saved theme preference
+// Initial Theme Check
 if (
   localStorage.theme === "dark" ||
   (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
@@ -40,7 +41,7 @@ if (
   themeIcon.src = "./images/moon_icon.png"; // show moon in light
 }
 
-// Toggle Theme
+// Toggle Theme on Click
 themeToggle.addEventListener("click", () => {
   document.documentElement.classList.toggle("dark");
   if (document.documentElement.classList.contains("dark")) {
@@ -51,6 +52,17 @@ themeToggle.addEventListener("click", () => {
     themeIcon.src = "./images/moon_icon.png";
   }
 });
+
+// 🔥 Hover Effect (#ff6363 Glow + Tint)
+themeToggle.addEventListener("mouseenter", () => {
+  themeIcon.style.filter =
+    "drop-shadow(0 0 1px #ff6363) brightness(0) saturate(100%) invert(65%) sepia(48%) saturate(4622%) hue-rotate(328deg) brightness(104%) contrast(102%)";
+});
+
+themeToggle.addEventListener("mouseleave", () => {
+  themeIcon.style.filter = "none"; // reset back to normal
+});
+
 
 // Mobile menu toggle
 
