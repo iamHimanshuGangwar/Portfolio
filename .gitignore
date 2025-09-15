@@ -1,0 +1,93 @@
+.pdf
+resume.docx
+*.log
+temp/
+*.tmp
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.iml
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore node modules
+node_modules/
+dist/
+build/
+out/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.next/
+.nuxt/
+public/
+.cache/
+.svelte-kit/
+*.tsbuildinfo
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+!.env.test
+
+# Ignore Python specific files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+*.whl
+
+# Ignore Java specific files
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.ipr
+*.iws
+out/
+
+
+# Ignore Ruby specific files
+*.gem
+*.rbc
+.bundle/
+vendor/bundle/
+log/
+tmp/
+db/*.sqlite3
+db/*.sqlite3-journal
+public/system/
+public/uploads/
+.byebug_history
+
+# Ignore Go specific files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+
+# Ignore Rust specific files

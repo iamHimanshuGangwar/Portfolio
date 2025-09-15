@@ -57,25 +57,26 @@
   >
     <!-- Background images -->
     <div
-      class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden"
+      class="fixed top-0 right-0 w-11/12 -z-10 -translate-y-4 sm:-translate-y-20 md:-translate-y-40 dark:hidden"
     >
       <img src="./images/header-bg-color.png" alt="" class="w-full" />
     </div>
     <div
-      class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] hidden dark:block"
+      class="fixed top-0 right-0 w-11/12 -z-10 -translate-y-4 sm:-translate-y-20 md:-translate-y-40 hidden dark:block"
     >
       <img src="./images/header-bg-dark.png" alt="" class="w-full" />
     </div>
 
     <!-- Navbar -->
     <nav
-      class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50"
+      class="w-full fixed px-4 sm:px-6 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 backdrop-blur-md"
     >
-      <img src="./images/logo.png" alt="Logo" class="w-60 cursor-pointer mr-14 dark:hidden " />
-      <img src="./images/logo_dark.png" alt="Logo" class="w-60 cursor-pointer mr-14 hidden dark:block" />
+      <img src="./images/logo.png" alt="Logo" class="w-40 sm:w-52 lg:w-60 cursor-pointer mr-4 dark:hidden" />
+      <img src="./images/logo_dark.png" alt="Logo" class="w-40 sm:w-52 lg:w-60 cursor-pointer mr-4 hidden dark:block" />
 
+      <!-- Desktop Menu -->
       <ul
-        class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-6 py-2 bg-white shadow-sm bg-opacity-50 dark:bg-darkCard dark:text-darkText dark:border dark:border-white/50 dark:bg-transparent"
+        class="hidden md:flex items-center gap-4 lg:gap-8 rounded-full px-4 sm:px-6 py-2 bg-white shadow-sm bg-opacity-50 dark:bg-darkCard dark:text-darkText dark:border dark:border-white/30"
       >
         <li><a href="#home" class="hover:text-primary">Home</a></li>
         <li><a href="#about" class="hover:text-primary">About me</a></li>
@@ -84,10 +85,8 @@
         <li><a href="#contact" class="hover:text-primary">Contact</a></li>
       </ul>
 
-      
-
       <!-- Buttons -->
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3 sm:gap-4">
         <!-- Dark Mode Toggle -->
         <button id="theme-toggle" class="p-2 rounded-full">
           <img
@@ -100,14 +99,15 @@
 
         <a
           href="#contact"
-          class="hidden lg:flex items-center gap-3 px-6 py-2 border border-gray-500 rounded-full ml-4 hover:text-primary dark:border-white/50"
-        >Contact 
+          class="hidden lg:flex items-center gap-2 px-4 sm:px-6 py-2 border border-gray-500 rounded-full hover:text-primary dark:border-white/50"
+        >
+          Contact
           <img src="./images/arrow-icon.png" alt="" class="w-3 dark:hidden" />
           <img src="./images/arrow-icon-dark.png" alt="" class="w-3 hidden dark:block" />
         </a>
 
         <!-- Mobile menu button -->
-        <button class="md:hidden ml-3" onclick="openMenu()">
+        <button class="md:hidden ml-2" onclick="openMenu()">
           <img src="./images/menu-black.png" alt="" class="w-6 dark:hidden" />
           <img src="./images/menu-white.png" alt="" class="w-6 hidden dark:block" />
         </button>
@@ -116,13 +116,11 @@
       <!-- Mobile Menu -->
       <ul
         id="sideMenu"
-        class="flex md:hidden flex-col gap-6 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-white dark:bg-darkCard transition duration-500 
-        dark:bg-[#2a004a] dark:text-white">
+        class="flex md:hidden flex-col gap-6 py-20 px-8 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-white dark:bg-darkCard transition-all duration-500 ease-in-out"
+      >
         <div class="absolute right-6 top-6" onclick="closeMenu()">
           <img src="./images/close-black.png" alt="" class="w-5 cursor-pointer dark:hidden" />
           <img src="./images/close-white.png" alt="" class="w-5 cursor-pointer hidden dark:block" />
-
-
         </div>
         <li><a href="#home" onclick="closeMenu()">Home</a></li>
         <li><a href="#about" onclick="closeMenu()">About</a></li>
