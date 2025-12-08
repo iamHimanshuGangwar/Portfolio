@@ -7,7 +7,7 @@ A modern, responsive personal portfolio website built with HTML, Tailwind CSS, a
 - Light and dark theme toggle (with localStorage persistence)
 - Animated elements (e.g., spinning circular text)
 - Services, work/projects, and contact sections
-- Custom fonts (Ovo, Outfit)
+- fonts (Ovo, Outfit)
 - Mobile-friendly navigation
 
 ## Getting Started
