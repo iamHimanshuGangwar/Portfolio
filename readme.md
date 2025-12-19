@@ -60,5 +60,4 @@ A modern, responsive personal portfolio website built with HTML, Tailwind CSS, a
 - [Google Fonts](https://fonts.google.com/)
 - Icons and images: your own or from free resources
 
-## License
-This project is open source and free to use for personal and educational purposes.
+
