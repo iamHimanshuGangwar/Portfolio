@@ -8,7 +8,7 @@ A modern, responsive personal portfolio website built with HTML, Tailwind CSS, a
 - Animated elements (e.g., spinning circular text)
 - Services, work/projects, and contact sections
 - fonts (Ovo, Outfit)
-- Mobile-friendly navigation
+- Mobile-friendly
 
 ## Getting Started
 
