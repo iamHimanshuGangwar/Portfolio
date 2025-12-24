@@ -1,4 +1,4 @@
-# Portfolio - Himanshu Gangwar
+# Portfolio -  Himanshu Gangwar
 
 A modern, responsive personal portfolio website built with HTML, Tailwind CSS, and JavaScript.
 
