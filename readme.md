@@ -19,7 +19,7 @@ A modern, responsive personal portfolio website built with HTML, Tailwind CSS, a
 1. **Install dependencies:**
    ```sh
    npm install tailwindcss
-   ```
+   ``` 
 2. **Create Tailwind input file:**
    ```css
    /* input.css */
