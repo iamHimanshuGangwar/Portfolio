@@ -5,6 +5,7 @@ const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
 
 
+
 function openMenu(){
     sideMenu.style.transform = 'translateX(-16rem)';
 }
