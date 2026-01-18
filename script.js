@@ -3,9 +3,6 @@ const navBar = document.querySelector('nav');
 const navLinks = document.querySelectorAll('nav ul');
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
-
-
-
 function openMenu(){
     
     sideMenu.style.transform = 'translateX(-16rem)';
