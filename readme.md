@@ -55,6 +55,4 @@ A modern, responsive personal portfolio website built with HTML, Tailwind CSS, a
 └── readme.md         # Project documentation
 ```
 
-## Credits
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Google Fonts](https://fonts.google.com/)
+
