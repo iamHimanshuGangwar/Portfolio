@@ -9,7 +9,6 @@ A modern, responsive personal portfolio website built with HTML, Tailwind CSS, a
 - Services, work/projects, and contact sections
 - fonts (Ovo, Outfit)
 
-
 ## Getting Started
 
 ### Prerequisites
