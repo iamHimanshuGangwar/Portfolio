@@ -25,6 +25,7 @@ A modern, responsive personal portfolio website built with HTML, Tailwind CSS, a
    @tailwind base;
    @tailwind components;
    @tailwind utilities;
+   
    ```
 3. **Build Tailwind CSS:**
    ```sh
